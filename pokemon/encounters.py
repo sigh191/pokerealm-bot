@@ -2,10 +2,9 @@
 Deterministic, rule-based logic for wild Pokémon encounters.
 
 Nothing in this file talks to the AI/Ollama module. That's on purpose:
-this is exactly the "game engine" side of the hybrid design described
-in the report - whether a catch succeeds has to be predictable and
-fair (a fixed formula plus Python's random number generator), not
-something an AI decides.
+this is the "game engine" side of the hybrid design - whether a catch
+succeeds has to be predictable and fair (a fixed formula plus Python's
+random number generator), not something an AI decides.
 """
 
 import random

@@ -3,8 +3,7 @@ Tests for pokemon/legendary_quest.py - the rare "a legendary reveals
 itself" quest bonus (Ho-Oh/Lugia), and its integration points in
 pokemon/data.py and pokemon/encounters.py.
 
-Added following real tester feedback (see claude/design-decisions.md
-and the report's evaluation chapter) that quest choices didn't feel
+Added following real tester feedback that quest choices didn't feel
 like they affected gameplay - this is the mechanic built in direct
 response to that.
 """

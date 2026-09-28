@@ -223,9 +223,9 @@ WILD_POKEMON = [
     # Ho-Oh and Lugia are Generation 2 legendaries - outside the
     # original 151 (Generation 1) roster this file's docstring
     # describes above. They were added specifically as a QUEST-ONLY
-    # reward (see pokemon/legendary_quest.py and
-    # claude/design-decisions.md), in response to real tester feedback
-    # that /explore didn't feel like it affected gameplay enough.
+    # reward (see pokemon/legendary_quest.py), in response to real
+    # tester feedback that /explore didn't feel like it affected
+    # gameplay enough.
     # "quest_exclusive": True is what keeps them out of the normal
     # /catch pool - see the filter in pokemon/encounters.py's
     # generate_wild_encounter(). They still live in this same list

@@ -25,8 +25,7 @@ MAX_FRIENDSHIP = 100
 # way, so - combined with EXP_REWARD_RANGE below - getting from level
 # 1 to level 100 is a genuine, multi-session grind rather than
 # something a single afternoon of quests could finish. That's a
-# deliberate scope decision, not an accident: see the project report's
-# discussion of this feature for the reasoning.
+# deliberate scope decision, not an accident.
 EXP_BASE = 20
 EXP_EXPONENT = 2
 

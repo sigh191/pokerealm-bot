@@ -1,21 +1,20 @@
 """
 Generates a quest for the SAME location, player level, and team many
 times in a row through the REAL AI pipeline, and measures how much the
-resulting text actually varies - the concrete measurement Chapter 2.5
-of the report says is needed to back up PokeRealm's claim that its
-AI-generated quests are more varied than the always-identical text
-used by the Discord bots reviewed in Chapter 2, rather than relying on
-manual inspection ("it looked varied when I tried it") alone.
+resulting text actually varies - a concrete measurement of whether
+PokeRealm's AI-generated quests are more varied than the
+always-identical text used by other Discord Pokémon bots, rather than
+relying on manual inspection ("it looked varied when I tried it")
+alone.
 
 This needs a real, running Ollama server (the same requirement as
 actually playing the bot) and makes NUMBER_OF_SAMPLES real calls to
 it, so it is NOT part of the automated pytest suite - a normal test
 run shouldn't depend on an external service being up, and this is
-meant to be run once (or a few times) to get a number for the report,
-not on every code change. The actual diversity maths lives in
-evaluation/lexical_diversity.py instead, which IS unit tested (see
-tests/test_lexical_diversity.py), since that part has no such
-dependency.
+meant to be run standalone, on demand, not on every code change. The
+actual diversity maths lives in evaluation/lexical_diversity.py
+instead, which IS unit tested (see tests/test_lexical_diversity.py),
+since that part has no such dependency.
 
 Run with: python measure_quest_diversity.py
 (takes a minute or two, depending on how fast Ollama responds locally)

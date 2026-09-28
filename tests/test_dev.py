@@ -10,9 +10,8 @@ discord.py Bot, the same technique tests/test_bot_registration.py uses
 for bot.py itself, so the actual registered command's callback is what
 gets exercised - not a reimplementation of its logic.
 
-Every command response is an embed (see claude/design-decisions.md's
-"every command output is an embed" entry), so these tests read the
-message text from `kwargs["embed"].description` rather than a plain
+Every command response is an embed, so these tests read the message
+text from `kwargs["embed"].description` rather than a plain
 positional string argument.
 """
 

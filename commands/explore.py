@@ -30,9 +30,9 @@ MIN_QUEST_STEPS = 2
 MAX_QUEST_STEPS = 3
 
 # /explore deliberately accepts ANY typed location, not just real
-# Pokemon places (see claude/design-decisions.md for the reasoning) -
-# that's a deliberate choice to show the AI module generalising to
-# arbitrary input, not an oversight. But "any input" still needs two
+# Pokemon places - that's a deliberate choice to show the AI module
+# generalising to arbitrary input, not an oversight. But "any input"
+# still needs two
 # basic guardrails before it's dropped straight into an AI prompt:
 #
 # 1. A length cap - real Pokemon locations are always short

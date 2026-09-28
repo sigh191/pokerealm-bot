@@ -145,9 +145,8 @@ def setup(bot: commands.Bot):
         # which for a shiny lead has the "Shiny " prefix still on it, so it
         # has to be split off before looking anything up here. Previously
         # this wasn't done, which meant a shiny lead's evolution entry was
-        # never found at all (see claude/design-decisions.md) - every shiny
-        # Pokémon looked permanently fully-evolved, whether it actually was
-        # or not.
+        # never found at all - every shiny Pokémon looked permanently
+        # fully-evolved, whether it actually was or not.
         base_species, is_shiny = split_stored_name(species_name)
 
         evolution_info = get_evolution_info(base_species)

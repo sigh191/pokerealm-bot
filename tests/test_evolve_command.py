@@ -7,12 +7,11 @@ RAW stored name (e.g. "Shiny Charmander"), but EVOLUTION_DATA is keyed
 by real species names only ("Charmander"). That lookup always missed
 for a shiny lead, so every shiny Pokémon appeared permanently
 fully-evolved (the "doesn't have any further evolution" message),
-whether it actually was or not - flagged as a known limitation in
-claude/design-decisions.md and the report's Section 4.8, now fixed by
-splitting the shiny prefix off (pokemon/data.py's split_stored_name())
-before any EVOLUTION_DATA lookup, and re-applying it to whichever
-target species is shown/stored/evolved into, since a shiny Pokémon
-evolves into a shiny of its next stage, never a normal one.
+whether it actually was or not. Fixed by splitting the shiny prefix
+off (pokemon/data.py's split_stored_name()) before any EVOLUTION_DATA
+lookup, and re-applying it to whichever target species is
+shown/stored/evolved into, since a shiny Pokémon evolves into a shiny
+of its next stage, never a normal one.
 
 These tests register the real command on a throwaway, disconnected
 discord.py Bot (same technique as tests/test_dev.py) so the actual

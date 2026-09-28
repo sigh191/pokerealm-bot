@@ -4,11 +4,10 @@ registers its command(s) on startup, and that the global
 on_command_error() handler responds correctly to each kind of error it
 promises to handle.
 
-This automates the same kind of check the report's Section 5.2
-describes doing with a "purpose-built stub of the relevant parts of
-the Discord API" - proving each command registers correctly and that
-error handling behaves as expected, WITHOUT needing a real Discord
-connection or a real bot token.
+This uses a purpose-built stub of the relevant parts of the Discord
+API to prove each command registers correctly and that error handling
+behaves as expected, WITHOUT needing a real Discord connection or a
+real bot token.
 
 How this loads bot.py without connecting to Discord
 -----------------------------------------------------
@@ -103,10 +102,9 @@ def test_every_command_module_registers_its_command(loaded_bot):
 
 
 def test_catch_command_has_the_configured_cooldown(loaded_bot):
-    # Confirms the 4-second-per-user cooldown (see
-    # claude/design-decisions.md) is actually wired onto the real
-    # registered command object, not just present somewhere in the
-    # source code.
+    # Confirms the 4-second-per-user cooldown is actually wired onto
+    # the real registered command object, not just present somewhere
+    # in the source code.
     catch_command = loaded_bot.bot.get_command("catch")
     cooldown = catch_command._buckets._cooldown
 

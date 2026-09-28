@@ -13,10 +13,8 @@ Two different testing styles are used in this file on purpose:
    test_generate_wild_encounter_matches_configured_rarity_weights(),
    deliberately does NOT mock randomness - it runs the real function
    thousands of times and checks the OVERALL distribution roughly
-   matches RARITY_WEIGHTS. This is a smaller, automated version of the
-   20,000-trial statistical validation described in the report's
-   evaluation chapter, which was previously only ever run by hand and
-   never saved as a real, repeatable test.
+   matches RARITY_WEIGHTS. This used to only ever be checked by hand
+   and is now a smaller, automated, repeatable version of that check.
 """
 
 import random
@@ -107,9 +105,8 @@ def test_generate_wild_encounter_matches_configured_rarity_weights():
     observed rarity split is in the right ballpark for RARITY_WEIGHTS
     (60/30/9/1). A generous +/-10 percentage point tolerance is used
     deliberately, since this uses real randomness rather than a fixed
-    seed - it's checking "roughly the right shape", the same thing the
-    report's Chapter 5 already checked by hand with 20,000 trials, not
-    verifying an exact percentage.
+    seed - it's checking "roughly the right shape", not verifying an
+    exact percentage.
     """
     trials = 5000
     counts = {rarity: 0 for rarity in RARITY_WEIGHTS}

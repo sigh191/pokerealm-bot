@@ -1,12 +1,11 @@
 """
 Image-based "vibe" classifier for Pokémon sprites.
 
-This is the project's second orchestrated AI model (see the CM3020
-template discussion in the report). It operates on IMAGE data, not
-text, which is what makes it a genuinely different model from the
-Llama 3.2 text-generation model in ai/ollama_client.py - the template
-asks for pre-trained models operating on different domains/data
-spaces, and text-in/text-out twice over would not satisfy that.
+This is the project's second orchestrated AI model. It operates on
+IMAGE data, not text, which is what makes it a genuinely different
+model from the Llama 3.2 text-generation model in ai/ollama_client.py -
+the project deliberately spans multiple different model domains/data
+spaces, rather than stacking two text-in/text-out models together.
 
 It uses CLIP (openai/clip-vit-base-patch32) through Hugging Face's
 "zero-shot-image-classification" pipeline. "Zero-shot" means CLIP was

@@ -3,8 +3,8 @@ Tests for commands/explore.py's location guardrails and quest-completion
 rewards.
 
 /explore deliberately accepts ANY typed location, not just real
-Pokemon places (see claude/design-decisions.md) - but whatever a
-player types goes straight into an AI prompt, so two basic checks
+Pokemon places - but whatever a player types goes straight into an
+AI prompt, so two basic checks
 happen first: reject anything blank/too long, and reject anything
 caught by a profanity filter. See _rejection_reason_for()'s own
 docstring in commands/explore.py for why this logic lives in its own
@@ -24,9 +24,9 @@ def test_a_normal_location_is_accepted():
 
 def test_an_unusual_but_harmless_location_is_still_accepted():
     # This project deliberately allows locations far outside the
-    # Pokemon universe (see claude/design-decisions.md) - the
-    # guardrails are only meant to catch blank/too-long/inappropriate
-    # input, not to enforce a Pokemon-only theme.
+    # Pokemon universe - the guardrails are only meant to catch
+    # blank/too-long/inappropriate input, not to enforce a
+    # Pokemon-only theme.
     assert _rejection_reason_for("Boon Lay MRT Station") is None
 
 
@@ -71,10 +71,8 @@ def _use_temporary_database(tmp_path, monkeypatch):
 
 
 def test_finishing_a_quest_awards_coins_as_well_as_exp_and_friendship(_use_temporary_database):
-    # A real gap between the draft report (which says quest completion
-    # should "reward coins on completion") and the code as it stood -
-    # this pins down the fix: _apply_rewards_and_describe() should now
-    # increase the player's coin balance, not just their lead Pokemon's
+    # _apply_rewards_and_describe() should increase the player's coin
+    # balance on quest completion, not just their lead Pokemon's
     # EXP/friendship.
     discord_user_id = 12345
     profile_before = get_player_profile(discord_user_id)

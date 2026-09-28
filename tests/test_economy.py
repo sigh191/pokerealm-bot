@@ -1,10 +1,5 @@
 """
 Tests for pokemon/economy.py - coin rewards and the shop's item list.
-
-Completes the other half of this project's own workplan item ("Add
-automated unit tests for JSON parsing/fallback logic and the economy
-functions" - see claude/rubric-gap-analysis.md) alongside
-tests/test_quest_generator.py.
 """
 
 from pokemon.economy import (

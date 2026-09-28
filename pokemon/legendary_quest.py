@@ -3,8 +3,7 @@ The "mystical legendary" quest bonus: a small chance, after a player
 finishes a /explore quest chain, that Ho-Oh or Lugia reveals itself
 and joins them.
 
-This exists as a direct answer to real tester feedback (esprit98, see
-claude/design-decisions.md and the report's evaluation chapter) that
+This exists as a direct answer to real tester feedback (esprit98) that
 /explore's quest choices didn't feel like they affected gameplay
 beyond flavour text. Quest completion already rewards EXP, friendship,
 and coins (see commands/explore.py's _apply_rewards_and_describe()) -
@@ -18,11 +17,10 @@ pokemon/encounters.py).
 Deliberately built as a plain dice-roll plus fixed flavour text, NOT
 something the AI model decides. This keeps the same "AI writes
 narrative, the deterministic engine controls every outcome that needs
-to be fair" split used everywhere else in this project (see the
-report's Design chapter): whether a player actually receives a real,
-permanent Pokémon has to be a fair, predictable roll that can be
-tested and reasoned about, not something a language model could be
-prompted into granting or refusing.
+to be fair" split used everywhere else in this project: whether a
+player actually receives a real, permanent Pokémon has to be a fair,
+predictable roll that can be tested and reasoned about, not something
+a language model could be prompted into granting or refusing.
 """
 
 import random
@@ -31,9 +29,9 @@ import random
 # legendary is supposed to feel like a special moment, not a routine
 # quest reward. Set once manual end-to-end testing (at a much higher
 # value, to actually observe it firing) confirmed the feature worked
-# correctly; see claude/design-decisions.md for that testing note.
-# 1/150 rather than a round percentage so the exact intended odds are
-# unambiguous from the source rather than rounded off (1/150 ≈ 0.67%).
+# correctly. 1/150 rather than a round percentage so the exact
+# intended odds are unambiguous from the source rather than rounded
+# off (1/150 ≈ 0.67%).
 LEGENDARY_QUEST_CHANCE = 1 / 150
 
 # The two quest-exclusive legendaries (see pokemon/data.py). Kept as
@@ -53,7 +51,7 @@ QUEST_LEGENDARIES = ["Ho-Oh", "Lugia"]
 # and returning something sensible. A future version could ask Llama
 # to write a fresh variant each time, the same way quest scenes are
 # generated, but that's left as a documented possibility rather than
-# built now (see the report's Further Work section).
+# built now.
 MYSTICAL_JOIN_TEXT = {
     "Ho-Oh": (
         "As the quest draws to a close, the sky above blazes with impossible colour - "

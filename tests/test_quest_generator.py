@@ -2,11 +2,9 @@
 Tests for ai/quest_generator.py - specifically the parts of it that
 are ordinary deterministic Python, not the AI call itself.
 
-This project's own workplan (see claude/rubric-gap-analysis.md and the
-draft report's Table 6.1) explicitly calls out adding tests for this
-module's "JSON parsing/fallback logic" - what happens when Llama
-returns something that isn't valid JSON (which DOES happen sometimes
-with real models, hence the fallback existing at all in
+This covers the module's JSON parsing/fallback logic - what happens
+when Llama returns something that isn't valid JSON (which DOES happen
+sometimes with real models, hence the fallback existing at all in
 generate_quest() and continue_quest() in the first place).
 
 What this file deliberately does NOT test: it never calls the real
@@ -16,9 +14,9 @@ the CLIP/CLAP models downloaded) - those are mocked out with
 monkeypatch so these tests run in under a second, anywhere, without
 needing Ollama or the internet. ai/image_classifier.py and
 ai/audio_classifier.py's OWN behaviour is exercised separately (see
-this session's manual test_audio.py-style checks for the audio
-classifier); this file is only about what quest_generator.py itself
-does with whatever those pieces return.
+the manual test_audio.py-style checks for the audio classifier); this
+file is only about what quest_generator.py itself does with whatever
+those pieces return.
 """
 
 import json

@@ -3,13 +3,10 @@ Tests for database/db.py's migration logic - specifically, that
 running init_db() against an OLD-format database file safely upgrades
 it without losing or corrupting any existing player data.
 
-This is exactly the test the report's Chapter 5 (Database Migration
-Testing) describes doing by hand - a database file built to match an
-earlier version of the schema, with the real migration function run
-against it and the result checked column by column - but it was never
-actually saved as a real, repeatable test until now. Running this
-automatically (instead of "I checked it manually once") is what the
-rubric's "good" tier means by "evidence of software testing".
+A database file is built to match an earlier version of the schema,
+the real migration function is run against it, and the result is
+checked column by column - this used to be verified by hand and is
+now a real, repeatable automated test instead.
 
 IMPORTANT: these tests never touch the real data/pokerealm.db file.
 Every test below uses pytest's tmp_path fixture (a fresh, empty
@@ -54,8 +51,6 @@ def _build_legacy_database(db_path):
     (before the shared-stats-per-species migration) rather than plain
     species-name strings.
 
-    This mirrors exactly what the report describes constructing by
-    hand for Chapter 5's migration test.
     """
     connection = sqlite3.connect(db_path)
     connection.execute(

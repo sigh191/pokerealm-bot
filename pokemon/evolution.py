@@ -12,9 +12,9 @@ a species that already evolved by levelling up keeps its real level
 requirement unchanged, and a species that normally needed a stone or a
 trade instead evolves at a flat LEVEL 40.
 
-A fact worth being explicit about (and worth mentioning in the report):
-friendship-based evolution didn't exist yet in the actual Generation 1
-games - it was only introduced in Generation 2 (e.g. Golbat -> Crobat).
+A fact worth being explicit about: friendship-based evolution didn't
+exist yet in the actual Generation 1 games - it was only introduced in
+Generation 2 (e.g. Golbat -> Crobat).
 None of the 151 species in this project's roster evolve by friendship
 in the real games, so in practice EVERY evolution below ends up being
 level-based. The "friendship" method is still fully implemented and
@@ -56,8 +56,8 @@ FRIENDSHIP_EVOLUTION_THRESHOLD = MAX_FRIENDSHIP
 #   "level"      - only present when method == "level".
 #   "originally" - NOT used by any game logic - purely a record of what
 #                  this evolution actually required in the real games,
-#                  kept here so the report can cite exactly which
-#                  species were converted from stone/trade to level 40.
+#                  kept here as documentation of exactly which species
+#                  were converted from stone/trade to level 40.
 EVOLUTION_DATA = {
     "Bulbasaur": {"evolves_to": ["Ivysaur"], "method": "level", "level": 16, "originally": "level"},
     "Ivysaur": {"evolves_to": ["Venusaur"], "method": "level", "level": 32, "originally": "level"},

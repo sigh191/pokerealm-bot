@@ -2,13 +2,11 @@
 Pure, dependency-light functions for measuring how much a set of
 generated texts vary from each other.
 
-This backs up the claim made throughout the report (see Chapter 2.1's
-comparison table and Chapter 5.7) that PokeRealm's AI-generated quest
-text is more varied than the static, always-identical text used by the
-Discord bots reviewed in Chapter 2 - Section 2.5 says this needs to be
-"measured rather than only observed", citing Shaib et al. (2025), who
-review and standardise metrics for measuring the lexical diversity of
-generated text.
+This measures whether PokeRealm's AI-generated quest text is actually
+more varied than the static, always-identical text used by other
+Discord Pokémon bots, rather than just assuming so - citing Shaib et
+al. (2025), who review and standardise metrics for measuring the
+lexical diversity of generated text.
 
 Distinct-n (implemented below) is one of the most established and
 widely cited of those metrics, originally introduced by Li et al.
