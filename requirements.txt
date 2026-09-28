@@ -1,0 +1,9 @@
+discord.py
+python-dotenv
+requests
+transformers
+torch
+pillow
+librosa
+soundfile
+better-profanity

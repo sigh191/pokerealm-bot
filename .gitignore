@@ -195,9 +195,9 @@ cython_debug/
 .abstra/
 
 # Visual Studio Code
-#   Visual Studio Code specific template is maintained in a separate VisualStudioCode.gitignore 
+#   Visual Studio Code specific template is maintained in a separate VisualStudioCode.gitignore
 #   that can be found at https://github.com/github/gitignore/blob/main/Global/VisualStudioCode.gitignore
-#   and can be added to the global gitignore or merged into this file. However, if you prefer, 
+#   and can be added to the global gitignore or merged into this file. However, if you prefer,
 #   you could uncomment the following to ignore the entire vscode folder
 # .vscode/
 # Temporary file for partial code execution
@@ -216,3 +216,18 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# --- PokeRealm project-specific additions ---
+
+# Live game database (real player data, not needed for the code to be reviewed)
+data/pokerealm.db
+
+# Report drafts, submission PDFs and other non-code documents - these aren't
+# part of the codebase itself and don't belong in a public source repo.
+*.pdf
+*.docx
+Draft Report.txt
+Preliminary-report.txt
+
+# The report-building folder (contains the built .docx and its working files)
+report/
